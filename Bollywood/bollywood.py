@@ -1,7 +1,6 @@
 import random
 
-MOVIES = ["Baazigar", "Darr", "Lagaan", "Devdas", "Maqbool", "Paheli", "Fiza", "Taal", "Jism", "Saathiya", "Pardes", "Kaal", "Company", "Nagina", "Lamhe"]
-
+MOVIES = ["Baazigar", "Darr", "Lagaan", "Devdas", "Maqbool", "Paheli", "Fiza", "Taal", "Jism", "Saathiya", "Pardes", "Kaal", "Company", "Nagina", "Lamhe", "Dilwale Dulhania Le Jayenge", "Sholay", "Kabhi Khushi Kabhie Gham", "Mughal e Azam", "3 Idiots", "Dangal", "Dil Chahta Hai", "Zindagi Na Milegi Dobara", "Jab We Met", "Chennai Express", "Piku", "Barfi", "Queen", "PK", "Andhadhun", "Gully Boy", "Bajirao Mastani", "Taare Zameen Par", "Rock On"]
 
 
 def strike(n):
@@ -19,13 +18,18 @@ def bollywood():
     tries = 9
     count =0
     duplicates = set()
+    whitespace_index = []
 
     movie_name = random.choice(MOVIES)
     no_of_letters = len(movie_name)
     words = [''] * no_of_letters
     
     for i in range(no_of_letters):
-        print("_",end=" ")
+        if movie_name[i] == ' ':
+            whitespace_index.append(i)
+            print('/', end="")
+        else:
+            print("_",end=" ")
         
     print("\n")
     
@@ -55,9 +59,9 @@ def bollywood():
                     
         final_word = ''.join(words)
         
-        if final_word.lower() == movie_name:
+        if final_word.lower() == movie_name.lower():
             tries = 0
-            print("\n YAYYY YOU WON!!!")
+            print("\n YAYYY YOU WON!!! \n The movie name is ")
             
             
         if count  == 9:
@@ -65,11 +69,16 @@ def bollywood():
             print("TRY AGAIN NEXT TIME!!!")
             print("The Movie name was  - ", movie_name)
         else:
+            a = 0
             for i in words:
                 if i:
                     print(i, end=" ")
                 else:
-                    print("_", end= " ")
+                    if a in whitespace_index:
+                        print("/", end=" ")
+                    else:
+                        print("_", end= " ")
+                a +=1
         
         print("\n")
     
@@ -87,5 +96,4 @@ print(f'Hey {name}, Lets play Bollywood!!!')
 
 
 bollywood()
-
 
