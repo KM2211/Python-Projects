@@ -2,7 +2,7 @@ import random
 
 MOVIES = ["Baazigar", "Darr", "Lagaan", "Devdas", "Maqbool", "Paheli", "Fiza", "Taal", "Jism", "Saathiya", "Pardes", "Kaal", "Company", "Nagina", "Lamhe", "Dilwale Dulhania Le Jayenge", "Sholay", "Kabhi Khushi Kabhie Gham", "Mughal e Azam", "3 Idiots", "Dangal", "Dil Chahta Hai", "Zindagi Na Milegi Dobara", "Jab We Met", "Chennai Express", "Piku", "Barfi", "Queen", "PK", "Andhadhun", "Gully Boy", "Bajirao Mastani", "Taare Zameen Par", "Rock On"]
 
-
+ 
 def strike(n):
     text = "BOLLYWOOD"
     result = ''
